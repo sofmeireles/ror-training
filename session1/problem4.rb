@@ -40,15 +40,18 @@ def prob4(nums)
 
     for i in 1...n
         left[i] = nums[i - 1] * left[i - 1]
+        raise ArgumentError,  "The product of any prefix or suffix exceeds the limit of a 32-bit integer" if left[i].bit_length > 32
     end
 
     for i in (n - 2).downto(0)
         right[i] = nums[i + 1] * right[i + 1]
+        raise ArgumentError,  "The product of any prefix or suffix exceeds the limit of a 32-bit integer" if right[i].bit_length > 32
     end
 
     result = []
     for i in 0...n
         result[i] = left[i] * right[i]
+        raise ArgumentError,  "The product of any prefix or suffix exceeds the limit of a 32-bit integer" if result[i].bit_length > 32
     end
 
     result
@@ -56,4 +59,6 @@ end
 
 
 
-puts "#{prob4([-1,1,0,-3,3])}"
+#puts "#{prob4([-1,1,0,-3,3])}"
+result = prob4([10, 10, 10, 10, 10, 10, 10, 10, 10, 10])
+puts "#{result}"
