@@ -2,8 +2,7 @@
 def two_sum1(nums, target)
     scope = Array.new(nums)
     while scope.length > 0
-        num = scope.first
-        scope.shift
+        num = scope.shift
         scope.each do |number| 
             if number+num == target 
                 first_index = nums.index(num)

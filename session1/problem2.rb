@@ -7,19 +7,15 @@ def choice(speed)
     when 1..4
         puts "Production: #{production_per_hour(speed, 1)} cars per hour\n"
         puts "Working items: #{production_per_hour(speed, 1)/60}\n"
-        return 
     when 5..8
         puts "Production: #{production_per_hour(speed, 0.9)} cars per hour\n"
         puts "Working items: #{production_per_hour(speed, 1)/60}\n"
-        return
     when 9
         puts "Production: #{production_per_hour(speed, 0.8)} cars per hour\n"
         puts "Working items: #{production_per_hour(speed, 1)/60}\n"
-        return 
     when 10
         puts "Production: #{production_per_hour(speed, 0.77)} cars per hour\n"
         puts "Working items: #{production_per_hour(speed, 1)/60}\n"
-        return 
     end
 end
 
